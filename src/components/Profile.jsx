@@ -19,7 +19,6 @@ const Profile = () => {
     
 
 
-    //check if user is loggedin and get session info from server
     useEffect(()=>{
         async function getProfile(){
             try{
@@ -105,7 +104,7 @@ const Profile = () => {
               console.log('Error', error.message);
               setStatus('An error ocurred');
             }
-            console.log(error.config);
+            
         }
         
     };

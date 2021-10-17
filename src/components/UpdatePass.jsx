@@ -34,7 +34,12 @@ const UpdatePass = () => {
 
         }catch(error){
                 if (error.response) {
-                    error.response.data.err && setStatus(error.response.data.err);
+                    if(error.response.status === 401){
+                        history.push('/login');
+                        
+                    }else{
+                        setStatus(error.response.data.err);
+                    }
 
                 } else if (error.request) {
                   // The request was made but no response was received
@@ -47,7 +52,7 @@ const UpdatePass = () => {
                   console.log('Error', error.message);
                   setStatus('An error ocurred');
                 }
-                console.log(error.config);
+                
               
             
         }
