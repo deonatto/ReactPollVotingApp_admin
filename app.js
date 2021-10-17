@@ -213,7 +213,9 @@ app.post('/pass',verify,async (req,res) =>{
             );
             
         }else{
-            res.json({message: "Wrong password"});
+            res.json({
+                auth: true,
+                message: "Wrong password"});
         }
         
          
